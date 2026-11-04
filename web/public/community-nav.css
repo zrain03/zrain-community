@@ -1,0 +1,89 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: Unknown (rekod asal belum disahkan)
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: web/public/community-nav.css
+ * BM: Fail Community nav dikekalkan mengikut kontrak Zrain Community.
+ * EN: Preserve the Community nav file according to Zrain Community contracts.
+ */
+/* Zrain Community header active-state cues, matched to Zrain Ecosystem.
+   Header-only. Does not alter feedback forms, admin logic or shared brand.css. */
+.zrain-header .main-nav { gap: 10px; }
+.zrain-header .main-nav a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 10px;
+  border-radius: 9px;
+  box-shadow: inset 0 -2px 0 transparent;
+  transition: color .2s ease, background .2s ease, box-shadow .2s ease;
+}
+.zrain-header .main-nav a.current,
+.zrain-header .main-nav a[aria-current="location"],
+.zrain-header .main-nav a[aria-current="page"] {
+  color: #a64930;
+  font-weight: 850;
+  background: #fff1e9;
+  border-radius: 9px;
+  box-shadow: inset 0 -2px 0 #b95136;
+}
+.zrain-header .main-nav a:hover { color: #a64930; }
+.zrain-header .mobile-menu nav a.current,
+.zrain-header .mobile-menu nav a[aria-current="location"],
+.zrain-header .mobile-menu nav a[aria-current="page"] {
+  color: #a64930;
+  background: #fff1e9;
+  box-shadow: inset 0 -2px 0 #b95136;
+  font-weight: 850;
+}
+@media (max-width: 1100px) {
+  .zrain-header .main-nav { gap: 5px; }
+  .zrain-header .main-nav a { padding-inline: 8px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .zrain-header .main-nav a { transition: none; }
+}
+
+/* BM: Ikut Golden Reference untuk ukuran header/footer sambil mengekalkan menu khas Community.
+   EN: Match Golden Reference header/footer sizes while retaining Community-specific navigation. */
+body.community-site .zrain-header .zrain-header__inner {
+  width: min(1160px, calc(100% - 48px));
+  min-height: 75px;
+}
+body.community-site .zrain-header .zrain-brand__name { font-size: 15px; }
+body.community-site .zrain-header .zrain-brand__product { font-size: 13px; }
+body.community-site .zrain-footer .zrain-footer__inner {
+  width: min(1160px, calc(100% - 48px));
+}
+/* BM: Setiap halaman termasuk developer, admin dan polisi mendapat navigasi mobile yang sama.
+   EN: Every full page, including developer, admin and policy pages, gets the same mobile navigation. */
+@media (max-width: 850px) {
+  body.community-site .zrain-header .zrain-header__inner {
+    flex-wrap: wrap;
+    gap: 8px;
+    padding-block: 9px;
+  }
+  body.community-site .zrain-header .main-nav {
+    display: flex;
+    order: 3;
+    flex: 1 0 100%;
+    width: 100%;
+    min-width: 0;
+    margin: 0;
+    justify-content: flex-start;
+    gap: 4px;
+    overflow-x: auto;
+    overscroll-behavior-x: contain;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+  body.community-site .zrain-header .main-nav::-webkit-scrollbar { display: none; }
+  body.community-site .zrain-header .main-nav a { flex-shrink: 0; }
+  body.community-site .zrain-header .header-action { margin-left: auto; }
+}
+@media (max-width: 620px) {
+  body.community-site .zrain-header .zrain-header__inner {
+    width: calc(100% - 24px);
+  }
+  body.community-site .zrain-header .zrain-brand__product { font-size: 12px; }
+}

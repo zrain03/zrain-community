@@ -1,0 +1,614 @@
+{
+  "project": "Zrain Community",
+  "developer": "Zrain",
+  "registryVersion": 1,
+  "registryDate": "2026-11-04",
+  "timezone": "Asia/Kuala_Lumpur (+08:00)",
+  "scope": "Complete retained source inventory; excludes installed dependencies, local secrets, caches and local state.",
+  "datePolicy": "Unknown means creation/update could not be independently verified; do not infer dates from ZIP extraction or file copy. For files newly documented in place, lastUpdated is 2026-11-04.",
+  "files": [
+    {
+      "path": ".gitignore",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "FILE_PROVENANCE.json",
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Self-inventory entry without unstable self-hash.",
+      "source": "Zrain Community migration",
+      "metadataLocation": "provenance-registry"
+    },
+    {
+      "path": "README.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "data-products.json",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "Unknown",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "provenance-registry"
+    },
+    {
+      "path": "docs/AI_HANDOFF.md",
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "evidence": "File introduced as part of the 2026-11-04 migration.",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "docs/AUDIT-2026-11-04.md",
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "evidence": "File introduced as part of the 2026-11-04 migration.",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "docs/DEPLOYMENT-v0.3.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "docs/DEPLOYMENT.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "docs/INTEGRATION.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "docs/PRODUCT-IDS.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "docs/SECURITY-v0.3.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "docs/SECURITY.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "docs/SNIPPETS-ALL-PRODUCTS.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "docs/START-HERE-MS.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "docs/VERIFICATION.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "package.json",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "provenance-registry"
+    },
+    {
+      "path": "scripts/check-zrain-ui.mjs",
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "evidence": "File introduced as part of the 2026-11-04 migration.",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "scripts/configure-web.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "scripts/dev-api-offline.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "scripts/generate-snippets.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "scripts/preflight.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "scripts/serve-web.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "scripts/setup-local.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "scripts/sync-zrain-ui.mjs",
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "evidence": "File introduced as part of the 2026-11-04 migration.",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "tests/admin-key-eye.test.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "tests/api.test.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "tests/community-nav-active.test.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "tests/community-ui.test.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "tests/integration-setup.test.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "tests/provenance.test.mjs",
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "evidence": "File introduced as part of the 2026-11-04 migration.",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/firebase.json",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "Unknown",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "provenance-registry"
+    },
+    {
+      "path": "web/public/admin-client.js",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/admin-key-eye.css",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/admin-key-eye.js",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/admin.html",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/auto-embed.js",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/brand.css",
+      "developer": "Zrain",
+      "created": "2026-10-27",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Reference zrain-ui source header: earliest tracked Git evidence, not necessarily original authoring date.",
+      "source": "Zrain UI upstream",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/community-client.js",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/community-nav.css",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/community-nav.js",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/community.css",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/config.js",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/developer-dashboard.html",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/developer-dashboard.js",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/developer-onboarding.js",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/developer.css",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/developers.html",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/embed.html",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/embed.js",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/guidelines.html",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/index.html",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/privacy.html",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/product-page.js",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/product.css",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/product.html",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/zrain-logo.webp",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "Unknown",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "provenance-registry"
+    },
+    {
+      "path": "web/public/zrain-ui-config.js",
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "lastUpdated": "2026-11-04",
+      "evidence": "File introduced as part of the 2026-11-04 migration.",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "web/public/zrain-ui.js",
+      "developer": "Zrain",
+      "created": "2026-10-27",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Reference zrain-ui source header: earliest tracked Git evidence, not necessarily original authoring date.",
+      "source": "Zrain UI upstream",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "worker/.dev.vars.example",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "worker/migrations/0001_init.sql",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "worker/migrations/0002_seed_products.sql",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "worker/migrations/0003_developers_and_moderation.sql",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "worker/migrations/0004_add_zrain_ecosystem.sql",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "worker/package-lock.json",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "Unknown",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "provenance-registry"
+    },
+    {
+      "path": "worker/package.json",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "Unknown",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "provenance-registry"
+    },
+    {
+      "path": "worker/src/index.mjs",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "worker/wrangler.jsonc",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-04",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    }
+  ]
+}

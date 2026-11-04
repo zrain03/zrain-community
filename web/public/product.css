@@ -1,0 +1,21 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: Unknown (rekod asal belum disahkan)
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: web/public/product.css
+ * BM: Fail Product dikekalkan mengikut kontrak Zrain Community.
+ * EN: Preserve the Product file according to Zrain Community contracts.
+ */
+.zrc-product-main{width:min(1190px,calc(100% - 30px));margin:clamp(20px,3vw,38px) auto 0}
+.zrc-product-intro{background:linear-gradient(115deg,#fff9f3,#f3faf6);border:1px solid #e7dbd2;border-radius:26px;padding:clamp(24px,5vw,45px);margin-bottom:22px}
+.zrc-product-intro .small-eyebrow{color:#b44e35;letter-spacing:.13em;font-weight:800;font-size:11px;margin:0 0 12px}
+.zrc-product-intro h1{font-size:clamp(30px,4.2vw,52px);line-height:1.13;letter-spacing:-.055em;color:#182b35;margin:0 0 12px}
+.zrc-product-intro p:not(.small-eyebrow){font-size:14px;color:#5e7079;line-height:1.85;max-width:690px;margin:0}
+.zrc-accent{color:#b95035}
+.zrc-product-return{display:inline-flex;text-decoration:none!important;font-size:12px;font-weight:800;color:#9d4c34;margin-top:23px;border:1px solid #e4cdbf;border-radius:12px;padding:12px 15px;background:white}
+.zrc-product-return:hover{background:#fff1e9}
+.zrc-product-mount{max-width:100%;min-width:0}
+.zrc-product-error{margin:22px 0;background:#fff5f2;border:1px solid #edb8a8;border-radius:12px;padding:16px;color:#9a4234}
+.product-community-page .zrain-footer{margin-top:44px}
+.product-community-page .header-action{text-decoration:none}
+@media(max-width:650px){.zrc-product-main{width:calc(100% - 20px);margin-top:13px}.zrc-product-intro{padding:25px 21px;border-radius:20px}.zrc-product-intro h1{font-size:34px}.product-community-page .zrain-header .main-nav{display:none}}

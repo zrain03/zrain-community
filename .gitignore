@@ -1,0 +1,17 @@
+# Pembangun / Developer: Zrain
+# Dicipta / Created: Unknown (rekod asal belum disahkan)
+# Dikemas kini / Last updated: 2026-11-04
+# Fail / File: .gitignore
+# BM: Fail .gitignore dikekalkan mengikut kontrak Zrain Community.
+# EN: Preserve the .gitignore file according to Zrain Community contracts.
+node_modules/
+.dev.vars
+worker/.dev.vars
+.env
+.env.*
+!.env.example
+.wrangler/
+.firebase/
+*.log
+.DS_Store
+.local/

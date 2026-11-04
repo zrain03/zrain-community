@@ -1,0 +1,35 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: Unknown (rekod asal belum disahkan)
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: web/public/developer.css
+ * BM: Fail Developer dikekalkan mengikut kontrak Zrain Community.
+ * EN: Preserve the Developer file according to Zrain Community contracts.
+ */
+/* Small extension of the approved Zrain Community visual identity, no redesign. */
+.developer-pages{padding-top:32px;padding-bottom:80px}
+.developer-pages .admin-hero{margin-bottom:26px}
+.developer-pages .card{margin-bottom:18px;padding:clamp(20px,3vw,34px);background:#fff;border:1px solid #e8dfd8;border-radius:20px;box-shadow:0 8px 26px rgba(50,40,32,.025)}
+.developer-pages .card h2{font-size:clamp(19px,2vw,26px);letter-spacing:-.035em;color:#193039;margin:0 0 15px}
+.developer-pages .card p{font-size:13px;line-height:1.75;color:#657583}
+.help-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px;align-items:start}
+.developer-pages .field{margin:12px 0}
+.developer-pages :is(input,textarea,select){box-sizing:border-box;display:block;width:100%;background:#fffdfb;border:1px solid #dccbc1;border-radius:12px;color:#162b32;padding:12px 14px;font:inherit;font-size:13px;max-width:100%}
+.developer-pages label{display:block;font-weight:750;color:#22353a;font-size:12px;margin-bottom:7px}
+.developer-pages .fields-row{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.developer-pages textarea[readonly]{background:#f8f6f3;font-family:ui-monospace,SFMono-Regular,Consolas,monospace;font-size:12px;white-space:pre;overflow:auto;resize:vertical}
+.developer-pages .mono{padding:12px 14px;background:#f7f1eb;color:#833f2e;overflow-wrap:anywhere;border-radius:9px;font-family:ui-monospace,Consolas,monospace}
+.developer-pages .proof-panel{margin-top:16px;background:#fffaf4}
+.developer-pages .steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}
+.developer-pages .steps>div{padding:18px;border:1px solid #e9ded6;border-radius:14px;background:#faf7f3}
+.developer-pages .steps strong{font-size:13px;color:#1b3238}
+.developer-pages a:not(.button):not(.zrain-footer__home){color:#9e4a30}
+.developer-pages .admin-list{display:grid;gap:10px}
+.developer-pages .admin-list article{background:#fffdfb;border:1px solid #ebdfd6;padding:14px;border-radius:12px}
+.developer-pages .admin-list .admin-row-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+.developer-pages .admin-list .admin-row-actions :is(select,button){width:auto;min-width:90px}
+.developer-pages .admin-bar{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.developer-pages .developer-product{padding:13px;border-bottom:1px solid #f1e7df}
+.developer-pages .developer-product span{color:#7e8790;font-size:12px}
+@media(max-width:900px){.help-grid{grid-template-columns:1fr}.developer-pages .steps{grid-template-columns:1fr}}
+@media(max-width:540px){.developer-pages .fields-row{grid-template-columns:1fr}.developer-pages .card{padding:18px}.developer-pages{width:calc(100% - 28px)}}

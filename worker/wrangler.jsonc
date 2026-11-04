@@ -1,0 +1,29 @@
+// Pembangun / Developer: Zrain
+// Dicipta / Created: Unknown (rekod asal belum disahkan)
+// Dikemas kini / Last updated: 2026-11-04
+// Fail / File: worker/wrangler.jsonc
+// BM: Fail Wrangler dikekalkan mengikut kontrak Zrain Community.
+// EN: Preserve the Wrangler file according to Zrain Community contracts.
+{
+	"name": "zrain-community-api",
+	"main": "src/index.mjs",
+	"compatibility_date": "2026-10-01",
+	"workers_dev": true,
+	"vars": {
+		"ALLOWED_ORIGINS": "https://zrain-community.web.app",
+		"TURNSTILE_HOSTNAME": "zrain-community.web.app",
+		"MAX_GLOBAL_POSTS_PER_DAY": "200",
+		"MAX_PRODUCT_POSTS_PER_DAY": "25",
+		"MAX_VISITOR_POSTS_PER_DAY": "5",
+		"MAX_REPORTS_PER_DAY": "60",
+		"MAX_VISITOR_REPORTS_PER_DAY": "3"
+	},
+	"d1_databases": [
+  {
+    "binding": "DB",
+    "database_name": "zrain-community-db",
+    "database_id": "d0d68919-e2eb-447a-82c3-d8a017dfe5a3",
+    "migrations_dir": "migrations"
+  }
+]
+}

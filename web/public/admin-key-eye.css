@@ -1,0 +1,24 @@
+/*
+ * Pembangun / Developer: Zrain
+ * Dicipta / Created: Unknown (rekod asal belum disahkan)
+ * Dikemas kini / Last updated: 2026-11-04
+ * Fail / File: web/public/admin-key-eye.css
+ * BM: Fail Admin key eye dikekalkan mengikut kontrak Zrain Community.
+ * EN: Preserve the Admin key eye file according to Zrain Community contracts.
+ */
+/* Zrain Community: admin key visibility control. Admin page only. */
+.admin-key-input{position:relative;width:100%}
+.admin-page .admin-key-input #adminKey{width:100%;padding-right:62px}
+.admin-key-eye{
+  position:absolute;right:9px;top:50%;transform:translateY(-50%);
+  width:43px;height:43px;border:1px solid transparent;border-radius:11px;
+  display:grid;place-items:center;padding:0;background:transparent;color:#566c67;
+  cursor:pointer;transition:background .16s ease,color .16s ease;
+}
+.admin-key-eye:hover{background:#f7eee9;color:#ae4934}
+.admin-key-eye:focus-visible{outline:3px solid #d7a58f;outline-offset:2px}
+.admin-key-eye svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.85;stroke-linecap:round;stroke-linejoin:round;pointer-events:none}
+.admin-key-eye .eye-closed{display:none}
+.admin-key-eye.is-visible .eye-open{display:none}
+.admin-key-eye.is-visible .eye-closed{display:block}
+@media(prefers-reduced-motion:reduce){.admin-key-eye{transition:none}}

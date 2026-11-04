@@ -1,0 +1,14 @@
+{
+  "name": "zrain-community-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev --local --port 8787 --var ALLOWED_ORIGINS:http://127.0.0.1:8767 --var TURNSTILE_HOSTNAME:localhost",
+    "db:local": "wrangler d1 migrations apply zrain-community-db --local",
+    "db:remote": "wrangler d1 migrations apply zrain-community-db --remote",
+    "deploy": "wrangler deploy"
+  },
+  "devDependencies": {
+    "wrangler": "^4.0.0"
+  }
+}

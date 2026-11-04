@@ -1,0 +1,11 @@
+# Pembangun / Developer: Zrain
+# Dicipta / Created: Unknown (rekod asal belum disahkan)
+# Dikemas kini / Last updated: 2026-11-04
+# Fail / File: worker/.dev.vars.example
+# BM: Fail .dev.vars dikekalkan mengikut kontrak Zrain Community.
+# EN: Preserve the .dev.vars file according to Zrain Community contracts.
+# Copy to .dev.vars for LOCAL development only. Never commit .dev.vars.
+# Cloudflare official dummy Turnstile keys are restricted to local dev.
+TURNSTILE_SECRET=1x0000000000000000000000000000000AA
+ADMIN_TOKEN=REPLACE_WITH_RANDOM_48_PLUS_CHARACTER_SECRET
+ABUSE_HASH_KEY=REPLACE_WITH_ANOTHER_RANDOM_48_PLUS_CHARACTER_SECRET

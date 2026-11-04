@@ -1,0 +1,21 @@
+{
+  "name": "zrain-community",
+  "version": "0.3.0",
+  "private": true,
+  "type": "module",
+  "description": "Zrain Community v0.3: product-isolated comments, global moderation and scoped developer integration",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node scripts/preflight.mjs && npm test && npm run test:ui && node --check worker/src/index.mjs && node --check web/public/community-client.js && node --check web/public/admin-client.js && node --check web/public/embed.js && node --check web/public/developer-onboarding.js && node --check web/public/developer-dashboard.js && node --check scripts/dev-api-offline.mjs && node --check web/public/auto-embed.js",
+    "dev:setup": "node scripts/setup-local.mjs",
+    "dev:web": "node scripts/serve-web.mjs",
+    "dev:api": "npm --prefix worker run dev",
+    "preflight:production": "node scripts/preflight.mjs --production",
+    "dev:api:offline": "node scripts/dev-api-offline.mjs",
+    "ui:sync": "node scripts/sync-zrain-ui.mjs",
+    "test:ui": "node scripts/check-zrain-ui.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}
