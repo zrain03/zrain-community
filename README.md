@@ -1,7 +1,7 @@
 <!--
   Pembangun / Developer: Zrain
   Dicipta / Created: Unknown (rekod asal belum disahkan)
-  Dikemas kini / Last updated: 2026-11-04
+  Dikemas kini / Last updated: 2026-11-06
   Fail / File: README.md
   BM: Fail Readme dikekalkan mengikut kontrak Zrain Community.
   EN: Preserve the Readme file according to Zrain Community contracts.
@@ -16,7 +16,7 @@ Brand: **Zrain**. Footer credit: **Developed by Zrain**. Tagline: **Made for peo
 
 ## Features
 
-- Every registered product/tool has its own permanent community ID. 57 original Zrain entries plus Zrain Ecosystem and Zrain Community (59 total seeded).
+- Every registered product/tool has its own permanent community ID. 59 historical spaces plus 9 newly registered spaces (68 total).
 - Anonymous comments, product-specific replies, suggestion/bug/appreciation categories, report buttons, Turnstile and moderation.
 - Admin dashboard can review, search, paginate and **permanently delete any user's comment across ALL products**, resolve reports and register more products.
 - Anonymous authors can edit or delete a recent comment for 24 hours in the same open embed tab using a separate private one-comment token. Edited content must pass the same automated checks before appearing publicly.

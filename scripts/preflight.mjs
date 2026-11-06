@@ -1,7 +1,7 @@
 /*
  * Pembangun / Developer: Zrain
  * Dicipta / Created: Unknown (rekod asal belum disahkan)
- * Dikemas kini / Last updated: 2026-11-04
+ * Dikemas kini / Last updated: 2026-11-06
  * Fail / File: scripts/preflight.mjs
  * BM: Fail Preflight dikekalkan mengikut kontrak Zrain Community.
  * EN: Preserve the Preflight file according to Zrain Community contracts.
@@ -10,11 +10,11 @@ import {readFileSync,existsSync} from 'node:fs';import {resolve} from 'node:path
 const root=resolve(import.meta.dirname,'..');const read=p=>readFileSync(resolve(root,p),'utf8');
 const prod=process.argv.includes('--production');
 const worker=read('worker/wrangler.jsonc'),config=read('web/public/config.js');
-const manifest=JSON.parse(read('data-products.json'));const migrations=read('worker/migrations/0002_seed_products.sql');
+const manifest=JSON.parse(read('data-products.json'));const migrations=read('worker/migrations/0002_seed_products.sql')+read('worker/migrations/0005_add_current_community_ids.sql');
 const ids=new Set(manifest.map(x=>x.id));
 if(!existsSync(resolve(root,'worker/migrations/0003_developers_and_moderation.sql')))throw Error('Developer/moderation migration missing');
 for(const page of ['developers.html','developer-dashboard.html'])if(!existsSync(resolve(root,'web/public/'+page)))throw Error('Developer page missing: '+page);
-if(manifest.length!==59||ids.size!==59||!ids.has('zrain-ai')||!ids.has('zrain-gifts')||!ids.has('zrain-ecosystem')||!ids.has('zrain-community'))throw Error('57 existing products plus Zrain Ecosystem and Zrain Community must be present');
+if(manifest.length!==68||ids.size!==68||!ids.has('zrain-ai')||!ids.has('zrain-gifts')||!ids.has('zrain-ecosystem')||!ids.has('zrain-community'))throw Error('57 existing products plus Zrain Ecosystem and Zrain Community must be present');
 for(const x of manifest){if(!migrations.includes("'"+x.id+"'"))throw Error('Missing seed: '+x.id);}
 if(!worker.includes('"name": "zrain-community-api"'))throw Error('Wrong Worker');
 if(!worker.includes('"binding": "DB"'))throw Error('Missing DB binding');

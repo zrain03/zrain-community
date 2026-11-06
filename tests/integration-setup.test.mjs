@@ -1,7 +1,7 @@
 /*
  * Pembangun / Developer: Zrain
  * Dicipta / Created: Unknown (rekod asal belum disahkan)
- * Dikemas kini / Last updated: 2026-11-04
+ * Dikemas kini / Last updated: 2026-11-06
  * Fail / File: tests/integration-setup.test.mjs
  * BM: Fail Integration setup.test dikekalkan mengikut kontrak Zrain Community.
  * EN: Preserve the Integration setup.test file according to Zrain Community contracts.
@@ -15,9 +15,9 @@ const read=f=>readFileSync(resolve(root,f),'utf8');
 test('all Zrain products have individual snippets with unique IDs and public embed only',()=>{
  const catalog=JSON.parse(read('data-products.json'));
  const snippets=read('docs/SNIPPETS-ALL-PRODUCTS.md');
- assert.equal(catalog.length,59);
+ assert.equal(catalog.length,68);
  for(const item of catalog) assert.ok(snippets.includes(`data-product="${item.id}"`));
- assert.equal(new Set(catalog.map(x=>x.id)).size,59);
+ assert.equal(new Set(catalog.map(x=>x.id)).size,68);
  assert.equal(snippets.includes('ADMIN_TOKEN'),false);
 });
 test('beginner integration wizard and developer dashboard exist and are linked',()=>{

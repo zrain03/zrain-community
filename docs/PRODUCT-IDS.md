@@ -1,14 +1,14 @@
 <!--
   Pembangun / Developer: Zrain
   Dicipta / Created: Unknown (rekod asal belum disahkan)
-  Dikemas kini / Last updated: 2026-11-04
+  Dikemas kini / Last updated: 2026-11-06
   Fail / File: docs/PRODUCT-IDS.md
   BM: Fail Product ids dikekalkan mengikut kontrak Zrain Community.
   EN: Preserve the Product ids file according to Zrain Community contracts.
 -->
 # Zrain Community: registered product IDs
 
-Seed snapshot: first **57 existing** Zrain entries plus Zrain Community itself as **58th**.
+Current source inventory: **68 registered spaces** including historical threads, five tool-family homes and the latest art/text tools. Two games are exempt from the shared widget.
 Names/URLs come from the latest available approved Zrain Ecosystem source inventory; published/live catalogs may change independently.
 
 | # | Name | Community ID | Kind |
@@ -75,3 +75,17 @@ Names/URLs come from the latest available approved Zrain Ecosystem source invent
 
 All entries have separate comments and reports. Every new product can be registered later via the Admin dashboard.
 For web embeds use the one-line `embed.js` snippet and set `data-product` to the corresponding ID.
+
+## Added current product spaces (6 November 2026)
+
+| Name | Community ID | Kind |
+|---|---|---|
+| Zrain Image Tools | `zrain-image-tools` | project |
+| Zrain PDF Tools | `zrain-pdf-tools` | project |
+| Zrain Document Tools | `zrain-document-tools` | project |
+| Zrain Developer Tools | `zrain-developer-tools` | project |
+| Zrain Productivity Tools | `zrain-productivity-tools` | project |
+| Text Counter | `text-counter` | tool |
+| Image to ASCII Art | `image-to-ascii-art` | tool |
+| Image to Binary Art | `image-to-binary-art` | tool |
+| Image to Block Art | `image-to-block-art` | tool |

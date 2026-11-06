@@ -352,5 +352,59 @@
     "name": "Zrain Community",
     "kind": "project",
     "url": "https://zrain-community.web.app/"
+  },
+  {
+    "id": "zrain-image-tools",
+    "name": "Zrain Image Tools",
+    "kind": "project",
+    "url": ""
+  },
+  {
+    "id": "zrain-pdf-tools",
+    "name": "Zrain PDF Tools",
+    "kind": "project",
+    "url": ""
+  },
+  {
+    "id": "zrain-document-tools",
+    "name": "Zrain Document Tools",
+    "kind": "project",
+    "url": ""
+  },
+  {
+    "id": "zrain-developer-tools",
+    "name": "Zrain Developer Tools",
+    "kind": "project",
+    "url": ""
+  },
+  {
+    "id": "zrain-productivity-tools",
+    "name": "Zrain Productivity Tools",
+    "kind": "project",
+    "url": ""
+  },
+  {
+    "id": "text-counter",
+    "name": "Text Counter",
+    "kind": "tool",
+    "url": "/tools/text-counter/"
+  },
+  {
+    "id": "image-to-ascii-art",
+    "name": "Image to ASCII Art",
+    "kind": "tool",
+    "url": "/tools/image-to-ascii-art/"
+  },
+  {
+    "id": "image-to-binary-art",
+    "name": "Image to Binary Art",
+    "kind": "tool",
+    "url": "/tools/image-to-binary-art/"
+  },
+  {
+    "id": "image-to-block-art",
+    "name": "Image to Block Art",
+    "kind": "tool",
+    "url": "/tools/image-to-block-art/"
   }
 ]

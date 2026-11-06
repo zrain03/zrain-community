@@ -1,7 +1,7 @@
 /*
  * Pembangun / Developer: Zrain
  * Dicipta / Created: Unknown (rekod asal belum disahkan)
- * Dikemas kini / Last updated: 2026-11-04
+ * Dikemas kini / Last updated: 2026-11-06
  * Fail / File: tests/api.test.mjs
  * BM: Fail Api.test dikekalkan mengikut kontrak Zrain Community.
  * EN: Preserve the Api.test file according to Zrain Community contracts.
@@ -27,6 +27,7 @@ function openDatabase(){
  db.exec(readFileSync(resolve(dir,'worker/migrations/0001_init.sql'),'utf8'));
  db.exec(readFileSync(resolve(dir,'worker/migrations/0002_seed_products.sql'),'utf8'));
  db.exec(readFileSync(resolve(dir,'worker/migrations/0003_developers_and_moderation.sql'),'utf8'));
+ db.exec(readFileSync(resolve(dir,'worker/migrations/0005_add_current_community_ids.sql'),'utf8'));
  return {
    raw: db,
    async batch(statements){
@@ -65,8 +66,8 @@ const send=async(path,{method='GET',body,admin=false,origin='http://127.0.0.1:87
 };
 const comment=(productId,text='A useful suggestion for this product',extra={})=>({productId,name:'Tester',text,category:'suggestion',turnstileToken:'dummy-valid-test-token',...extra});
 
-test('57 source entries plus Ecosystem and Community are uniquely seeded',async()=>{
- const r=await send('/api/products');assert.equal(r.status,200);assert.equal(r.body.products.length,59);
+test('all 68 registered spaces are uniquely seeded',async()=>{
+ const r=await send('/api/products');assert.equal(r.status,200);assert.equal(r.body.products.length,68);
  assert.ok(r.body.products.some(x=>x.id==='zrain-links'));
  assert.ok(r.body.products.some(x=>x.id==='zrain-monitor'));
  assert.ok(r.body.products.some(x=>x.id==='zrain-gifts'));
@@ -120,7 +121,7 @@ test('admin auth is required for all admin actions',async()=>{
  let r=await send('/api/admin/comments');assert.equal(r.status,401);
  r=await send('/api/admin/products');assert.equal(r.status,401);
  r=await send('/api/admin/stats');assert.equal(r.status,401);
- r=await send('/api/admin/stats',{admin:true});assert.equal(r.status,200);assert.equal(r.body.activeProducts,59);
+ r=await send('/api/admin/stats',{admin:true});assert.equal(r.status,200);assert.equal(r.body.activeProducts,68);
 });
 
 test('per-visitor and global quotas prevent unlimited anonymous posts',async()=>{

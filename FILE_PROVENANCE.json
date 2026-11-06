@@ -2,7 +2,7 @@
   "project": "Zrain Community",
   "developer": "Zrain",
   "registryVersion": 1,
-  "registryDate": "2026-11-04",
+  "registryDate": "2026-11-06",
   "timezone": "Asia/Kuala_Lumpur (+08:00)",
   "scope": "Complete retained source inventory; excludes installed dependencies, local secrets, caches and local state.",
   "datePolicy": "Unknown means creation/update could not be independently verified; do not infer dates from ZIP extraction or file copy. For files newly documented in place, lastUpdated is 2026-11-04.",
@@ -17,28 +17,10 @@
       "metadataLocation": "file-header"
     },
     {
-      "path": "FILE_PROVENANCE.json",
-      "developer": "Zrain",
-      "created": "2026-11-04",
-      "lastUpdated": "2026-11-04",
-      "evidence": "Self-inventory entry without unstable self-hash.",
-      "source": "Zrain Community migration",
-      "metadataLocation": "provenance-registry"
-    },
-    {
-      "path": "README.md",
-      "developer": "Zrain",
-      "created": "Unknown",
-      "lastUpdated": "2026-11-04",
-      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
-      "source": "Supplied Zrain Community snapshot",
-      "metadataLocation": "file-header"
-    },
-    {
       "path": "data-products.json",
       "developer": "Zrain",
       "created": "Unknown",
-      "lastUpdated": "Unknown",
+      "lastUpdated": "2026-11-06",
       "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
       "source": "Supplied Zrain Community snapshot",
       "metadataLocation": "provenance-registry"
@@ -92,7 +74,7 @@
       "path": "docs/PRODUCT-IDS.md",
       "developer": "Zrain",
       "created": "Unknown",
-      "lastUpdated": "2026-11-04",
+      "lastUpdated": "2026-11-06",
       "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
       "source": "Supplied Zrain Community snapshot",
       "metadataLocation": "file-header"
@@ -119,7 +101,7 @@
       "path": "docs/SNIPPETS-ALL-PRODUCTS.md",
       "developer": "Zrain",
       "created": "Unknown",
-      "lastUpdated": "2026-11-04",
+      "lastUpdated": "2026-11-06",
       "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
       "source": "Supplied Zrain Community snapshot",
       "metadataLocation": "file-header"
@@ -143,6 +125,15 @@
       "metadataLocation": "file-header"
     },
     {
+      "path": "FILE_PROVENANCE.json",
+      "developer": "Zrain",
+      "created": "2026-11-04",
+      "lastUpdated": "2026-11-06",
+      "evidence": "Self-inventory entry without unstable self-hash.",
+      "source": "Zrain Community migration",
+      "metadataLocation": "provenance-registry"
+    },
+    {
       "path": "package.json",
       "developer": "Zrain",
       "created": "Unknown",
@@ -150,6 +141,15 @@
       "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
       "source": "Supplied Zrain Community snapshot",
       "metadataLocation": "provenance-registry"
+    },
+    {
+      "path": "README.md",
+      "developer": "Zrain",
+      "created": "Unknown",
+      "lastUpdated": "2026-11-06",
+      "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
+      "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
     },
     {
       "path": "scripts/check-zrain-ui.mjs",
@@ -191,7 +191,7 @@
       "path": "scripts/preflight.mjs",
       "developer": "Zrain",
       "created": "Unknown",
-      "lastUpdated": "2026-11-04",
+      "lastUpdated": "2026-11-06",
       "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
       "source": "Supplied Zrain Community snapshot",
       "metadataLocation": "file-header"
@@ -236,7 +236,7 @@
       "path": "tests/api.test.mjs",
       "developer": "Zrain",
       "created": "Unknown",
-      "lastUpdated": "2026-11-04",
+      "lastUpdated": "2026-11-06",
       "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
       "source": "Supplied Zrain Community snapshot",
       "metadataLocation": "file-header"
@@ -260,10 +260,19 @@
       "metadataLocation": "file-header"
     },
     {
+      "path": "tests/current-products-coverage.test.mjs",
+      "developer": "Zrain",
+      "created": "2026-11-06",
+      "lastUpdated": "2026-11-06",
+      "evidence": "New Community coverage file created on 6 November 2026",
+      "source": "2026-11-06 coordinated Community release",
+      "metadataLocation": "file-header"
+    },
+    {
       "path": "tests/integration-setup.test.mjs",
       "developer": "Zrain",
       "created": "Unknown",
-      "lastUpdated": "2026-11-04",
+      "lastUpdated": "2026-11-06",
       "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
       "source": "Supplied Zrain Community snapshot",
       "metadataLocation": "file-header"
@@ -572,6 +581,15 @@
       "lastUpdated": "2026-11-04",
       "evidence": "Creation history not verifiable from uploaded ZIP (no trustworthy Git log).",
       "source": "Supplied Zrain Community snapshot",
+      "metadataLocation": "file-header"
+    },
+    {
+      "path": "worker/migrations/0005_add_current_community_ids.sql",
+      "developer": "Zrain",
+      "created": "2026-11-06",
+      "lastUpdated": "2026-11-06",
+      "evidence": "New Community coverage file created on 6 November 2026",
+      "source": "2026-11-06 coordinated Community release",
       "metadataLocation": "file-header"
     },
     {

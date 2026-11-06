@@ -1,7 +1,7 @@
 <!--
   Pembangun / Developer: Zrain
   Dicipta / Created: Unknown (rekod asal belum disahkan)
-  Dikemas kini / Last updated: 2026-11-04
+  Dikemas kini / Last updated: 2026-11-06
   Fail / File: docs/SNIPPETS-ALL-PRODUCTS.md
   BM: Snippet bagi semua produk; jana semula selepas manifest berubah.
   EN: Product-specific snippets; regenerate after changing the manifest.
@@ -19,7 +19,7 @@ Do not paste developer API keys into public HTML.
 3. Publish the product website using its own deployment process.
 4. Verify its comments are separate from every other product.
 
-**Note:** This file is a reference only. It does not modify or deploy the other 57 projects.
+**Note:** This file is a reference only. The current manifest has 68 spaces including historical product IDs. The two games use their own feedback systems.
 
 ### Guess The Flag (guess-the-flag)
 
@@ -373,4 +373,60 @@ Do not paste developer API keys into public HTML.
 
 ```html
 <script src="https://zrain-community.web.app/embed.js" data-product="zrain-community" defer></script>
+```
+
+## New registered spaces, 6 November 2026
+
+### Zrain Image Tools (zrain-image-tools)
+
+```html
+<script src="https://zrain-community.web.app/embed.js" data-product="zrain-image-tools" defer></script>
+```
+
+### Zrain PDF Tools (zrain-pdf-tools)
+
+```html
+<script src="https://zrain-community.web.app/embed.js" data-product="zrain-pdf-tools" defer></script>
+```
+
+### Zrain Document Tools (zrain-document-tools)
+
+```html
+<script src="https://zrain-community.web.app/embed.js" data-product="zrain-document-tools" defer></script>
+```
+
+### Zrain Developer Tools (zrain-developer-tools)
+
+```html
+<script src="https://zrain-community.web.app/embed.js" data-product="zrain-developer-tools" defer></script>
+```
+
+### Zrain Productivity Tools (zrain-productivity-tools)
+
+```html
+<script src="https://zrain-community.web.app/embed.js" data-product="zrain-productivity-tools" defer></script>
+```
+
+### Text Counter (text-counter)
+
+```html
+<script src="https://zrain-community.web.app/embed.js" data-product="text-counter" defer></script>
+```
+
+### Image to ASCII Art (image-to-ascii-art)
+
+```html
+<script src="https://zrain-community.web.app/embed.js" data-product="image-to-ascii-art" defer></script>
+```
+
+### Image to Binary Art (image-to-binary-art)
+
+```html
+<script src="https://zrain-community.web.app/embed.js" data-product="image-to-binary-art" defer></script>
+```
+
+### Image to Block Art (image-to-block-art)
+
+```html
+<script src="https://zrain-community.web.app/embed.js" data-product="image-to-block-art" defer></script>
 ```
