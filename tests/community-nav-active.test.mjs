@@ -15,24 +15,12 @@ import vm from 'node:vm';
 const root=resolve(import.meta.dirname,'..');
 const read=p=>readFileSync(resolve(root,p),'utf8');
 
-test('Zrain UI Golden Reference keeps approved navigation and assets',()=>{
- const index=read('web/public/index.html');
+test('Shared Community admin menu retains the live navigation destinations',()=>{
  const admin=read('web/public/admin.html');
- const css=read('web/public/community-nav.css');
- const js=read('web/public/community-nav.js');
- assert.match(index,/href="\/community-nav\.css\?v=20261104"/);
- assert.match(admin,/href="\/community-nav\.css\?v=20261104"/);
- assert.match(index,/src="\/community-nav\.js\?v=20261104"/);
- assert.match(css,/inset 0 -2px 0 #b95136/);
- assert.match(css,/\.main-nav a\[aria-current="location"\]/);
- assert.match(css,/\.main-nav a\[aria-current="page"\]/);
- assert.match(js,/classList\.toggle\('current'/);
- assert.match(js,/setAttribute\('aria-current', 'location'\)/);
- assert.match(admin,/href="\/admin\.html" aria-current="page"/);
- assert.doesNotMatch(admin,/class="mobile-menu"/);
- assert.match(admin,/zrain-ui-config\.js/);
- assert.match(index,/id="communityMount"/);
- assert.match(index,/src="\/embed\.js" data-product="zrain-community"/);
+ const raw=admin.match(/data-menu="([^"]+)"/)?.[1];
+ const menu=JSON.parse(raw.replaceAll('&quot;','"'));
+ assert.deepEqual(menu.map(item=>item.href),['/','/#how-it-works','/admin.html']);
+ assert.doesNotMatch(admin,/zrain-ui-config\.js|class="mobile-menu"/);
  for(const file of ['web/public/config.js','web/public/community-client.js','web/public/admin-client.js','web/public/brand.css'])assert.ok(existsSync(resolve(root,file)),`Missing existing production asset ${file}`);
 });
 

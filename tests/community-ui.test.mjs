@@ -16,19 +16,18 @@ const home=read('web/public/index.html');
 const admin=read('web/public/admin.html');
 const css=read('web/public/community.css');
 
-test('Zrain Ecosystem header structure is shared on public and admin pages',()=>{
+test('Community home and admin use the shared shell',()=>{
  for(const html of [home,admin]){
-  for(const piece of ['class="zrain-header"','class="zrain-header__inner"','class="zrain-brand"','class="zrain-brand__home"','class="zrain-brand__product"','class="main-nav"']){
-   assert.ok(html.includes(piece),`Expected ${piece}`);
-  }
-  assert.match(html,/<link rel="stylesheet" href="\/brand\.css\?v=20261104">/);
-  assert.match(html,/<link rel="icon" type="image\/webp" href="\/zrain-logo\.webp">/);
+  assert.match(html, /<script defer src="https:\/\/zrain\.web\.app\/ui\/v2\/layout\.js" data-product="zrain-community"/);
  }
+ assert.match(home,/data-native/);
+ assert.match(admin,/data-zrain-content/);
 });
-test('Real product community is mounted, with no fake demo page',()=>{
- assert.match(home, /id="communityMount"/);
- assert.match(home, /src="\/embed\.js" data-product="zrain-community" data-target="#communityMount"/);
- assert.doesNotMatch(home,/live demo|try the demo|this example is/i);
+test('Community feedback uses the real product embed',()=>{
+ assert.match(home,/frame\.src=origin\+'\/embed\.html\?product='/);
+ assert.match(home,/communityId:'zrain-community'/);
+ assert.doesNotMatch(home,/frame\.srcdoc\s*=/);
+ assert.match(home,/location\.hash==='#community'/);
 });
 test('No named product comparison appears in public landing',()=>{
  assert.doesNotMatch(home,/Zrain Links|Zrain Monitor/i);
@@ -37,13 +36,10 @@ test('Buttons and navigation deliberately suppress default underlines',()=>{
  assert.match(css,/body\.community-site a \{ text-decoration:none; \}/);
  assert.match(css,/body\.community-site \.button \{[^}]*text-decoration:none/);
 });
-test('Shared brand assets and standard footer are retained',()=>{
+test('Admin exposes one mount for the shared footer and no legacy logo',()=>{
  assert.ok(existsSync(resolve(root,'web/public/brand.css')));
- assert.ok(existsSync(resolve(root,'web/public/zrain-logo.webp')));
- for(const html of [home,admin]){
-  assert.match(html,/Developed by Zrain/);
-  assert.match(html,/Made for people\. Built with purpose\./);
- }
+ assert.equal((admin.match(/<footer data-zrain-footer>/g)||[]).length,1);
+ assert.doesNotMatch(admin,/<img class="zrain-footer__logo"/);
 });
 test('Original admin selectors and configuration scripts remain accessible',()=>{
  for(const id of ['loginView','loginForm','adminKey','loginStatus','dashboard','summary','logout','productFilter','statusFilter','commentRows','refresh','reportRows','refreshReports','productForm','newProductId','newProductName','newKind','registerStatus']){
@@ -53,8 +49,9 @@ test('Original admin selectors and configuration scripts remain accessible',()=>
  assert.match(admin,/src="\/admin-client\.js"/);
 });
 test('Mobile and keyboard accessibility are included',()=>{
- assert.match(home,/class="skip-link"/);
- assert.match(home,/class="main-nav"/);
+ assert.match(admin,/class="skip-link"/);
+ assert.match(home,/class="community-skip" href="#zrain-product-content"/);
+ assert.ok(home.includes("progress.setAttribute('aria-label','Page progress')"));
  assert.match(read('web/public/community-nav.css'),/overflow-x: auto/);
  assert.match(css,/@media\(max-width:620px\)/);
  assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);

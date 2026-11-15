@@ -23,24 +23,11 @@
   <script defer src="/config.js"></script>
   <script defer src="/product-page.js"></script>
   <title>Product discussion | Zrain Community</title>
-<script type="module" src="/zrain-ui-config.js?v=20261104"></script></head>
+</head>
 <body class="community-site product-community-page">
   <a class="skip-link" href="#productCommunity">Skip to discussion</a>
-  <header class="zrain-header">
-    <div class="zrain-header__inner">
-      <div class="zrain-brand">
-        <a class="zrain-brand__home" href="https://zrain.web.app/" aria-label="Zrain Ecosystem"><img class="zrain-brand__logo" src="/zrain-logo.webp" width="42" height="42" alt=""><strong class="zrain-brand__name">Zrain</strong></a>
-        <a class="zrain-brand__product" href="/">Community</a>
-      </div>
-      <nav class="main-nav" aria-label="Community navigation">
-        <a href="/">Community home</a>
-        <a class="current" aria-current="page" href="#productCommunity">Discussion</a>
-        <a href="/developers.html">For developers</a>
-      </nav>
-      <a class="header-action" href="https://zrain.web.app/">Explore Zrain <span aria-hidden="true">↗</span></a>
-    </div>
-  </header>
-  <main class="zrc-product-main" id="productCommunity">
+  <header data-zrain-header></header>
+  <main data-zrain-content class="zrc-product-main" id="productCommunity">
     <section class="zrc-product-intro" aria-labelledby="productTitle">
       <p class="small-eyebrow">ZRAIN COMMUNITY · INDEPENDENT CONVERSATION</p>
       <h1 id="productTitle">Community feedback<span class="zrc-accent">.</span></h1>
@@ -50,6 +37,7 @@
     <div class="zrc-product-mount" id="communityMount" aria-live="off"></div>
     <p class="zrc-product-error" id="productError" role="status" hidden></p>
   </main>
-  <footer class="zrain-footer"><div class="zrain-footer__inner"><div class="zrain-footer__identity"><a class="zrain-footer__home" href="https://zrain.web.app/"><img class="zrain-footer__logo" src="/zrain-logo.webp" width="38" height="38" alt=""><span class="zrain-footer__copy"><strong>Developed by Zrain</strong><small>Made for people. Built with purpose.</small></span></a><nav class="zrain-footer__links"><a href="/">Community</a><a href="/guidelines.html">Guidelines</a><a href="/privacy.html">Privacy</a></nav></div></footer>
+  <footer data-zrain-footer></footer>
+<script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-community" data-menu="[{&quot;label&quot;:&quot;Community home&quot;,&quot;href&quot;:&quot;/&quot;},{&quot;label&quot;:&quot;Discussion&quot;,&quot;href&quot;:&quot;#productCommunity&quot;},{&quot;label&quot;:&quot;For developers&quot;,&quot;href&quot;:&quot;/developers.html&quot;}]"></script>
 </body>
 </html>

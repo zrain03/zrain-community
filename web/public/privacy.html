@@ -1,8 +1,8 @@
 <!doctype html>
 <!--
-Developer: Zrain
-Created: 2026-11-15
-Updated: 2026-11-15
+Pembangun / Developer: Zrain
+Dicipta / Created: 2026-11-15
+Dikemas kini / Last updated: 2026-11-15
 BM: Contoh halaman padat dengan kawalan rasmi dan dua menu progress Zrain.
 EN: Compact product example with the official controls and two progress navigation steps.
 -->
@@ -3083,10 +3083,10 @@ ui.ready.catch(error=>console.error(error));
 <style>.zrain-policy{position:relative;z-index:8;width:min(780px,100%);margin:0 auto;padding:24px 16px 80px}.zrain-policy section,.zrain-policy article{margin-bottom:20px}.zrain-policy p{line-height:1.6}.zrain-policy a{color:inherit;text-decoration:underline}</style>
 <script>
 (() => {
- const view=document.querySelector('.zr-compact-left');if(!view)throw Error('Missing Zrain UI content region');
+ const view=document.querySelector('.zr-compact-hero');if(!view)throw Error('Missing Zrain UI content region');
  const policy=document.createElement('main');policy.className='zrain-policy';
  policy.append(document.getElementById('community-policy-content').content.cloneNode(true));
- view.replaceChildren(policy);
+ view.replaceWith(policy);
  const links=[['Community','/'],['Guidelines','/guidelines.html'],['Privacy','/privacy.html']];
  const steps=[...document.querySelectorAll('.zr-progress-step')];
  steps.forEach((step,index)=>{
@@ -3099,4 +3099,5 @@ ui.ready.catch(error=>console.error(error));
  document.querySelector('.zr-compact-contact button')?.addEventListener('click',e=>{e.stopImmediatePropagation();location.assign('/#community')},true);
  document.addEventListener('zrain:languagechange',()=>steps.forEach((step,i)=>step.querySelector('.zr-progress-name').textContent=links[i][0]));
 })();
-</script></body></html>
+</script><script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-community" data-native></script>
+</body></html>

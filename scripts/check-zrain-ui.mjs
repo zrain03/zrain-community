@@ -12,30 +12,26 @@ import { resolve } from 'node:path';
 const root = resolve(import.meta.dirname,'..');
 const get = relative => readFile(resolve(root,relative),'utf8');
 const pages = (await readdir(resolve(root,'web/public'))).filter(f=>f.endsWith('.html')&&f!=='embed.html');
-const brand = await get('web/public/brand.css');
-const ui = await get('web/public/zrain-ui.js');
-const config = await get('web/public/zrain-ui-config.js');
-const nav = await get('web/public/community-nav.css');
-assert.match(brand,/\.zrain-footer \.zrain-footer__home/);
-assert.match(ui,/export function mountZrainUI/);
-assert.match(ui,/Made for people\. Built with purpose\./);
-assert.match(config,/product: 'Community'/);
-assert.match(config,/mountZrainUI/);
-assert.doesNotMatch(config,/navigation\s*:/, 'Community keeps app-owned navigation');
-assert.match(nav,/overflow-x: auto/);
-assert.match(nav,/max-width: 850px/);
+const native = new Set(['index.html','guidelines.html','privacy.html']);
+const loader = 'https://zrain.web.app/ui/v2/layout.js';
 for (const name of pages) {
   const page = await get(`web/public/${name}`);
-  assert.match(page, /class="zrain-header"/, `${name}: header missing`);
-  assert.match(page, /class="zrain-footer__identity"/, `${name}: footer identity missing`);
-  assert.match(page, /class="main-nav"/, `${name}: navigation missing`);
-  assert.match(page, /zrain-ui-config\.js\?v=20261104/, `${name}: shared script missing`);
-  assert.match(page, /brand\.css\?v=20261104/, `${name}: shared CSS missing`);
-  assert.match(page, /community-nav\.css\?v=20261104/, `${name}: nav CSS missing`);
-  assert.doesNotMatch(page, /class="mobile-menu"/, `${name}: redundant mobile menu`);
-  assert.match(page, /Developed by Zrain/, `${name}: developer credit`);
+  assert.equal(page.split(loader).length,2,`${name}: one shared layout script required`);
+  assert.match(page,/data-product="zrain-community"/);
+  if(native.has(name)){
+    assert.match(page,/data-native/);
+    assert.match(page,/miniGame:true,splash:true/);
+  }else{
+    assert.match(page,/<header data-zrain-header>/);
+    assert.match(page,/<footer data-zrain-footer>/);
+    assert.match(page,/<main data-zrain-content/);
+    const menu = JSON.parse(page.match(/data-menu="([^"]+)"/)[1].replaceAll('&quot;','"'));
+    assert.ok(menu.length >= 2);
+    assert.doesNotMatch(page,/zrain-ui-config\.js/);
+  }
 }
 const embed = await get('web/public/embed.html');
-assert.doesNotMatch(embed,/zrain-ui-config\.js|class="zrain-header"/, 'Embedded discussion must remain standalone');
-assert.match(await get('web/public/index.html'),/data-product="zrain-community"/);
+assert.ok(embed.includes(loader), 'The direct embed URL must use the shared layout');
+assert.match(embed,/if\(window.top===window\)\{[\s\S]*document.body.append\(loader\)/, 'The shared layout must only load on standalone discussion pages');
+assert.match(embed,/community-client\.js/);
 console.log(`Zrain Community shared UI checks passed on ${pages.length} full pages and the isolated embed.`);
