@@ -67,3 +67,24 @@ test('native pages use English without a language switch',()=>{
   assert.match(page,/function refreshLanguage\(\)\{language='en';/);
  }
 });
+
+// The English view data is self-contained; obsolete BM dictionaries cannot change it.
+test('native views retain English content without Malay dictionaries',()=>{
+ for(const name of ['index.html','guidelines.html','privacy.html']) {
+  const page=read('web/public/'+name);
+  const start=page.indexOf('const defaultViews = ['),end=page.indexOf('const localize=',start);
+  assert.ok(start>=0 && end>start,name);
+  const block=page.slice(start,end);
+  assert.doesNotMatch(block,/\b(?:bm|labelBM):/);
+  const data=new Function(block+';return {defaultViews,feedbackView}')();
+  assert.equal(data.defaultViews[0].eyebrow.en,'01 / WHAT ZRAIN UI DOES');
+  assert.equal(data.feedbackView.label,'Feedback');
+  if(name==='index.html') {
+   const a=page.indexOf('const communityViews='),b=page.indexOf('const ui=mountZrainCompact',a);
+   assert.ok(a>=0 && b>a);const own=page.slice(a,b);
+   assert.doesNotMatch(own,/\b(?:bm|labelBM):/);
+   const views=new Function(own+';return communityViews')();
+   assert.equal(views[0].headline[0].en,'Every thought matters.');
+  }
+ }
+});

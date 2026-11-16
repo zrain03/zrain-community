@@ -2623,7 +2623,7 @@ function mountZrainExperience(options = {}) {
   // Do not replace a product's preexisting translation manager.
   if (!win.ZrainI18n) {
     win.ZrainI18n={get lang(){return language}, t,
-      world:(index,en)=>language==='bm'?['Laluan Pagi','Pasar Bunga','Lorong Pereka','Bumbung Keemasan','Bandar Malam'][index]||en:en};
+      world:(index,en)=>en};
   }
   function setLanguage(value){
     language='en';
@@ -2749,33 +2749,31 @@ function mountZrainExperience(options = {}) {
 
 const defaultViews = [
   {
-    label:'Overview',labelBM:'Pengenalan',
-    eyebrow:{en:'01 / WHAT ZRAIN UI DOES',bm:'01 / FUNGSI ZRAIN UI'},
-    headline:[{en:'One Zrain look.',bm:'Satu identiti Zrain.'},{en:'Every product.',bm:'Semua produk.'}],
+    label:'Overview',
+    eyebrow:{en:'01 / WHAT ZRAIN UI DOES'},
+    headline:[{en:'One Zrain look.'},{en:'Every product.'}],
     description:{
-      en:'Zrain UI keeps the mascot logo, colours, typography, Zrain Run, splash, progress menu, buttons, inputs, dropdowns, dialogs, theme, language, Community and footer consistent. Each product still owns its features, data and API.',
-      bm:'Zrain UI menyeragamkan logo mascot, warna, font, Zrain Run, splash, menu progress, butang, input, dropdown, dialog, tema, bahasa, Community dan footer. Fungsi, data dan API kekal milik setiap produk.'
+      en:'Zrain UI keeps the mascot logo, colours, typography, Zrain Run, splash, progress menu, buttons, inputs, dropdowns, dialogs, theme, language, Community and footer consistent. Each product still owns its features, data and API.'
     },
-    primary:{en:'How to connect',bm:'Cara sambung'}
+    primary:{en:'How to connect'}
   },
   {
-    label:'Integration',labelBM:'Integrasi',
-    eyebrow:{en:'02 / FOR EVERY PRODUCT',bm:'02 / UNTUK SETIAP PRODUK'},
-    headline:[{en:'Shared design.',bm:'Reka bentuk sama.'},{en:'Your own features.',bm:'Fungsi sendiri.'}],
+    label:'Integration',
+    eyebrow:{en:'02 / FOR EVERY PRODUCT'},
+    headline:[{en:'Shared design.'},{en:'Your own features.'}],
     description:{
-      en:'Add @zrain/ui, set your product name, pages and registered Community ID. Your product keeps its features, authentication and backend. Zrain UI handles the shared appearance.',
-      bm:'Pasang @zrain/ui, tetapkan nama produk, halaman dan ID Community berdaftar. Produk kekal mengurus fungsi, log masuk dan backend sendiri. Zrain UI mengurus penampilan bersama.'
+      en:'Add @zrain/ui, set your product name, pages and registered Community ID. Your product keeps its features, authentication and backend. Zrain UI handles the shared appearance.'
     },
-    primary:{en:'View setup',bm:'Lihat cara pasang'}
+    primary:{en:'View setup'}
   }
 ];
 
 const feedbackView={
-  label:'Feedback',labelBM:'Maklum balas',feedback:true,
-  eyebrow:{en:'03 / ZRAIN COMMUNITY',bm:'03 / KOMUNITI ZRAIN'},
-  headline:[{en:'Your voice.',bm:'Suara awak.'},{en:'Our next step.',bm:'Langkah seterusnya.'}],
-  description:{en:'Suggestions, bugs or little thoughts. Share them directly with Zrain Community, right here.',bm:'Cadangan, masalah atau apa sahaja pendapat. Kongsi terus melalui Zrain Community di sini.'},
-  primary:{en:'',bm:''}
+  label:'Feedback',feedback:true,
+  eyebrow:{en:'03 / ZRAIN COMMUNITY'},
+  headline:[{en:'Your voice.'},{en:'Our next step.'}],
+  description:{en:'Suggestions, bugs or little thoughts. Share them directly with Zrain Community, right here.'},
+  primary:{en:''}
 };
 const localize=(value,lang)=>typeof value==='object' && value!==null ? String(value[lang]??value.en??'') : String(value??'');
 
@@ -3007,7 +3005,7 @@ mountZrainCompact({
   dialog.querySelector('#zrCompactDialogClose').addEventListener('click',()=>modal.close());
   let current=0;let language='en';
   // English remains active even when an older language preference is stored.
-  const t=(en,bm)=>language==='bm'?bm:en;
+  const t=(en)=>en;
   function navigateFeedback(){
     display(views.findIndex(view=>view.feedback));
     win.scrollTo?.({top:0,behavior:win.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
@@ -3024,7 +3022,7 @@ mountZrainCompact({
     if(isFeedback&&!inlineFeedback)inlineFeedback=mountInlineFeedback({container:feedbackPanel,communityId:options.communityId,document:doc});
     for(let i=0;i<views.length;i++){
       const step=steps[i];step.classList.toggle('is-current',i===current);
-      step.querySelector('.zr-progress-name').textContent=t(views[i].label,views[i].labelBM||views[i].label);
+      step.querySelector('.zr-progress-name').textContent=views[i].label;
       if(i===current)step.setAttribute('aria-current','page');else step.removeAttribute('aria-current');
     }
     progress.style.setProperty('--progress',current/(views.length-1)*100+'%');
@@ -3074,21 +3072,21 @@ mountZrainCompact({
 
 
 const communityViews=[
- {label:'Welcome',labelBM:'Selamat datang',
-  eyebrow:{en:'01 / ZRAIN COMMUNITY',bm:'01 / KOMUNITI ZRAIN'},
-  headline:[{en:'Every thought matters.',bm:'Setiap pendapat bermakna.'},{en:'Every product listens.',bm:'Setiap produk mendengar.'}],
-  description:{en:'A little space for honest feedback, questions and ideas. No account needed, and every Zrain product has its own conversation.',bm:'Ruang kecil untuk maklum balas, soalan dan idea. Tak perlu akaun, dan setiap produk Zrain mempunyai perbincangan sendiri.'},
-  primary:{en:'How it works',bm:'Cara ia berfungsi'}},
- {label:'How it works',labelBM:'Cara ia berfungsi',
-  eyebrow:{en:'02 / THOUGHTFUL CONVERSATIONS',bm:'02 / PERBUALAN BERMAKNA'},
-  headline:[{en:'Simple to share.',bm:'Senang untuk berkongsi.'},{en:'Easy to be heard.',bm:'Mudah untuk didengari.'}],
-  description:{en:'Write a thought, keep it in the right product space and help something grow. Suggestions, bug reports, questions and appreciation all belong here.',bm:'Kongsi pendapat, pilih ruang produk yang betul dan bantu sesuatu menjadi lebih baik. Cadangan, laporan masalah, soalan dan penghargaan semuanya dialu-alukan.'},
-  primary:{en:'Leave a note',bm:'Tinggalkan pesanan'}},
- {label:'Feedback',labelBM:'Maklum balas',feedback:true,
-  eyebrow:{en:'03 / COMMUNITY CONVERSATION',bm:'03 / PERBUALAN KOMUNITI'},
-  headline:[{en:'Leave a note.',bm:'Tinggalkan pesanan.'},{en:'Make it count.',bm:'Biar bermakna.'}],
-  description:{en:'This discussion belongs to Zrain Community. The simpler feedback design is shown below.',bm:'Perbincangan ini milik Zrain Community. Rekaan maklum balas yang lebih ringkas dipaparkan di bawah.'},
-  primary:{en:'',bm:''}}
+ {label:'Welcome',
+  eyebrow:{en:'01 / ZRAIN COMMUNITY'},
+  headline:[{en:'Every thought matters.'},{en:'Every product listens.'}],
+  description:{en:'A little space for honest feedback, questions and ideas. No account needed, and every Zrain product has its own conversation.'},
+  primary:{en:'How it works'}},
+ {label:'How it works',
+  eyebrow:{en:'02 / THOUGHTFUL CONVERSATIONS'},
+  headline:[{en:'Simple to share.'},{en:'Easy to be heard.'}],
+  description:{en:'Write a thought, keep it in the right product space and help something grow. Suggestions, bug reports, questions and appreciation all belong here.'},
+  primary:{en:'Leave a note'}},
+ {label:'Feedback',feedback:true,
+  eyebrow:{en:'03 / COMMUNITY CONVERSATION'},
+  headline:[{en:'Leave a note.'},{en:'Make it count.'}],
+  description:{en:'This discussion belongs to Zrain Community. The simpler feedback design is shown below.'},
+  primary:{en:''}}
 ];
 
 const ui=mountZrainCompact({product:'Zrain Community',communityId:'zrain-community',githubUrl:'https://github.com/zrain03/zrain-community',contactEmail:'zrain.dev@gmail.com',views:communityViews,miniGame:true,splash:true,onViewChange(index){
