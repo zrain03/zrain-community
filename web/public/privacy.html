@@ -3058,7 +3058,7 @@ mountZrainCompact({
   progress.addEventListener('wheel',event=>{if(Math.abs(event.deltaY)<4)return;event.preventDefault();display(current+(event.deltaY>0?1:-1))},{passive:false});
   hero.querySelector('#zrCompactPrimary').addEventListener('click',()=>{experience.playUIFeedback('cta');!options.views&&current===1?openDetails():current<views.length-1?display(current+1):openDetails()});
   doc.addEventListener('keydown',event=>{
-    if(event.altKey&&!event.ctrlKey&&!event.metaKey&&!['INPUT','TEXTAREA','SELECT'].includes(doc.activeElement?.tagName)){
+    if(progress.isConnected&&event.altKey&&!event.ctrlKey&&!event.metaKey&&!['INPUT','TEXTAREA','SELECT'].includes(doc.activeElement?.tagName)){
       if(event.key==='ArrowRight'){event.preventDefault();display(Math.min(current+1,views.length-1))}
       else if(event.key==='ArrowLeft'){event.preventDefault();display(Math.max(current-1,0))}
     }
@@ -3087,17 +3087,8 @@ ui.ready.catch(error=>console.error(error));
  const policy=document.createElement('main');policy.className='zrain-policy';
  policy.append(document.getElementById('community-policy-content').content.cloneNode(true));
  view.replaceWith(policy);
- const links=[['Community','/'],['Guidelines','/guidelines.html'],['Privacy','/privacy.html']];
- const steps=[...document.querySelectorAll('.zr-progress-step')];
- steps.forEach((step,index)=>{
-   const [name,url]=links[index];
-   step.querySelector('.zr-progress-name').textContent=name;
-   step.classList.toggle('is-current',name==="Privacy");
-   if(name==="Privacy")step.setAttribute('aria-current','page');else step.removeAttribute('aria-current');
-   step.addEventListener('click',e=>{e.stopImmediatePropagation();location.assign(url)},true);
- });
+ document.querySelector('.zr-compact-progress')?.remove();
  document.querySelector('.zr-compact-contact button')?.addEventListener('click',e=>{e.stopImmediatePropagation();location.assign('/#community')},true);
- document.addEventListener('zrain:languagechange',()=>steps.forEach((step,i)=>step.querySelector('.zr-progress-name').textContent=links[i][0]));
 })();
-</script><script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-community" data-native></script>
+</script><script defer src="https://zrain.web.app/ui/v2/layout.js" data-product="zrain-community" data-native data-no-menu></script>
 </body></html>
