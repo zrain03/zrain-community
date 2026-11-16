@@ -25,8 +25,12 @@ for (const name of pages) {
     assert.match(page,/<header data-zrain-header>/);
     assert.match(page,/<footer data-zrain-footer>/);
     assert.match(page,/<main data-zrain-content/);
-    const menu = JSON.parse(page.match(/data-menu="([^"]+)"/)[1].replaceAll('&quot;','"'));
-    assert.ok(menu.length >= 2);
+    if (!/data-no-menu/.test(page)) {
+      const match = page.match(/data-menu="([^"]+)"/);
+      assert.ok(match, `${name}: menu configuration required`);
+      const menu = JSON.parse(match[1].replaceAll('&quot;','"'));
+      assert.ok(menu.length >= 2);
+    }
     assert.doesNotMatch(page,/zrain-ui-config\.js/);
   }
 }

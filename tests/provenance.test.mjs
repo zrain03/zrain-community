@@ -30,7 +30,7 @@ function isLocalOnlyFile(name){
 function collect(folder){
  return readdirSync(folder,{withFileTypes:true}).flatMap(item=>{
   if(item.isDirectory())return skip.has(item.name)?[]:collect(resolve(folder,item.name));
-  if(isLocalOnlyFile(item.name))return [];
+  if(skip.has(item.name) || isLocalOnlyFile(item.name))return [];
   return [relative(root,resolve(folder,item.name)).replaceAll('\\','/')];
  });
 }

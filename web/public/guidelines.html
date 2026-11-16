@@ -2281,7 +2281,7 @@ function __runZrainMini(){
 'use strict';
 const $=id=>document.getElementById(id);
 const dock=$('gameDock'),canvas=$('miniCanvas'),ctx=canvas.getContext('2d',{alpha:false}),modal=$('resultModal');
-const tr=(en,bm)=>window.ZrainI18n?.t(en,bm)||en;
+const tr=(en)=>en;
 const assetNames=['world1','world2','world3','world4','world5','running','walking','front','head','round','run_stride_a','run_stride_b','run_slide'];
 const asset={};for(const n of assetNames){const im=new Image();im.decoding='async';im.src=window.__ZRAIN_MINI_ASSETS__?.[n]||'assets/'+n+'.webp';asset[n]=im;}
 const worlds=[
@@ -2292,7 +2292,7 @@ const worlds=[
 {name:'Moonlight Town',sky:'#342a48',ground:'#482638',trim:'#e4ba91'}
 ];
 const reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-const worldName=index=>window.ZrainI18n?.world(index,worlds[index].name)||worlds[index].name;
+const worldName=index=>worlds[index].name;
 let w=700,h=160,dpr=1,ground=143,mode='intro',t=0,score=0,best=Number(safeGet('zrain-run.best',0))||0,stars=0,hearts=3,phase=0,prevPhase=0,blend=1,distance=0,nextObstacle=2.6,nextStar=1.2,objects=[],spark=[],player={x:100,y:0,vy:0,jumps:0,slide:0,anim:0},last=0,sound=null,toastTimer=null,runData=null,slideHeld=false,slideQueued=false,obstacleCount=0;
 const key={left:false,right:false};
 // The default is gesture-only. A small opt-in fallback is available in Pause
@@ -2557,12 +2557,6 @@ function mountZrainExperience(options = {}) {
     soundButton.querySelector('span').textContent=on?t('Sound on','Bunyi hidup'):t('Sound off','Bunyi mati');
     if(on)playUIFeedback('enable');
   });
-  if (options.language !== false) {
-    const langButton = element(doc,'button','zr-lang-switch');
-    langButton.type = 'button';langButton.setAttribute('aria-label','Switch to Bahasa Melayu');
-    langButton.innerHTML = '<span class="zr-lang-track" aria-hidden="true"><span class="zr-lang-thumb"></span></span><span class="zr-lang-en" aria-hidden="true">EN</span><span class="zr-lang-bm" aria-hidden="true">BM</span>';
-    actions.append(langButton);
-  }
   if (options.theme !== false) {
     const themeButton = element(doc,'button','zr-theme-button');
     themeButton.type = 'button';themeButton.setAttribute('role','switch');
@@ -2619,7 +2613,7 @@ function mountZrainExperience(options = {}) {
       });
     }catch{} // No AudioContext or blocked audio must never interrupt the UI.
   }
-  let language=safeRead('zrain-language','en') === 'bm' ? 'bm' : 'en';
+  let language='en';
   let theme=safeRead('zrain-brightness','100') === '0' ? 'day' : 'night';
   const t=(en,bm)=>label(en,bm,language);
 
@@ -2630,7 +2624,7 @@ function mountZrainExperience(options = {}) {
       world:(index,en)=>language==='bm'?['Laluan Pagi','Pasar Bunga','Lorong Pereka','Bumbung Keemasan','Bandar Malam'][index]||en:en};
   }
   function setLanguage(value){
-    language=value==='bm'?'bm':'en';
+    language='en';
     safeWrite('zrain-language',language);
     const b=actions.querySelector('.zr-lang-switch');
     if(b){b.dataset.active=language;b.setAttribute('aria-pressed',String(language==='bm'));b.setAttribute('aria-label',t('Switch to Bahasa Melayu','Tukar kepada English'))}
@@ -2650,7 +2644,6 @@ function mountZrainExperience(options = {}) {
     if(b){b.dataset.day=String(theme==='day');b.setAttribute('aria-checked',String(theme==='night'));b.setAttribute('aria-label',t(theme==='night'?'Switch to day mode':'Switch to night mode',theme==='night'?'Tukar ke mod cerah':'Tukar ke mod gelap'))}
     options.onThemeChange?.(theme);
   }
-  actions.querySelector('.zr-lang-switch')?.addEventListener('click',()=>{setLanguage(language==='en'?'bm':'en');playUIFeedback('tap')});
   actions.querySelector('.zr-theme-button')?.addEventListener('click',()=>{setTheme(theme==='day'?'night':'day');playUIFeedback('theme')});
 
   // Community uses the official script and a distinct permanent ID on each product.
@@ -3011,7 +3004,7 @@ mountZrainCompact({
   doc.body.append(dialog);const modal=mountZrainDialog(dialog);
   dialog.querySelector('#zrCompactDialogClose').addEventListener('click',()=>modal.close());
   let current=0;let language='en';
-  try{language=win.localStorage?.getItem('zrain-language')==='bm'?'bm':'en'}catch{}
+  // English remains active even when an older language preference is stored.
   const t=(en,bm)=>language==='bm'?bm:en;
   function navigateFeedback(){
     display(views.findIndex(view=>view.feedback));
@@ -3063,7 +3056,7 @@ mountZrainCompact({
       else if(event.key==='ArrowLeft'){event.preventDefault();display(Math.max(current-1,0))}
     }
   });
-  function refreshLanguage(lang){language=lang;contactLinks.setLanguage(lang);display(current,false)}
+  function refreshLanguage(){language='en';contactLinks.setLanguage('en');display(current,false)}
   doc.addEventListener('zrain:languagechange',event=>refreshLanguage(event.detail.lang));
   refreshLanguage(language);
   return {...experience,openCommunity:navigateFeedback,goTo:display,compactRoot:shell};

@@ -56,3 +56,14 @@ test('Mobile and keyboard accessibility are included',()=>{
  assert.match(css,/@media\(max-width:620px\)/);
  assert.match(css,/@media\(prefers-reduced-motion:reduce\)/);
 });
+
+// English stays active even for visitors with an older saved language preference.
+test('native pages use English without a language switch',()=>{
+ for(const name of ['index.html','guidelines.html','privacy.html']) {
+  const page=read('web/public/'+name);
+  assert.doesNotMatch(page,/const langButton = element\(doc,'button','zr-lang-switch'\)/);
+  assert.doesNotMatch(page,/localStorage\?\.getItem\('zrain-language'\)==='bm'/);
+  assert.match(page,/function setLanguage\(value\)\{\s*language='en';/);
+  assert.match(page,/function refreshLanguage\(\)\{language='en';/);
+ }
+});
