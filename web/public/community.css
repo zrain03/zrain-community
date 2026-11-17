@@ -23,6 +23,8 @@ body.community-site :is(a,button,input,textarea,select,summary):focus-visible { 
 .skip-link:focus {top:10px;}
 /* Match Zrain Ecosystem's structural header. Labels remain Community-specific. */
 .zrain-header {position:sticky;top:0;z-index:40;background:rgba(255,250,246,.96)!important;border-bottom:1px solid #eee3db;backdrop-filter:blur(15px);}
+/* The compact header's surface must follow its theme-specific text. */
+body.community-site .zr-compact .zrain-header {background:var(--zr-shell)!important;}
 .zrain-header .zrain-header__inner {width:min(1440px,calc(100% - 50px));min-height:80px;margin-inline:auto;display:flex;align-items:center;gap:24px;}
 .zrain-header .zrain-brand {display:flex;align-items:center;gap:12px;flex-shrink:0;}
 .zrain-header .zrain-brand__home {display:flex;align-items:center;gap:9px;color:#172831;font-size:19px;font-weight:800;}
@@ -113,8 +115,9 @@ body.community-site .button.secondary:hover {border-color:#cfa68f;background:#ff
 .admin-main {max-width:1100px;padding-top:53px;}
 .admin-hero {border:1px solid #e9e3da;background:linear-gradient(110deg,#f9fbf7,#fff9f4);padding:35px 40px;border-radius:23px;margin-bottom:22px;}
 .admin-hero h1 {font-size:clamp(30px,4vw,45px);line-height:1.15;letter-spacing:-.055em;margin:0 0 12px;}
+.community-site .admin-hero h1 {color:#44272c;}
 .admin-hero .accent {color:var(--community-terra);}
-.admin-hero p:last-child {color:#75818b;line-height:1.75;font-size:13px;margin:0;}
+.admin-hero p:last-child {color:#4f5d61;line-height:1.75;font-size:13px;margin:0;}
 .admin-page .card {border-radius:20px;margin-bottom:15px;}
 .admin-page .admin-login {max-width:660px;padding:26px;}
 .admin-bar {display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin:18px 0;padding:17px 20px;background:#eff7ee;border:1px solid #d9e7d8;border-radius:17px;justify-content:space-between;}
