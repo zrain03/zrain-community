@@ -21,6 +21,8 @@
   const roadmaps={under_review:'Under review',planned:'Planned',implemented:'Implemented'};
   const valid=/^[a-z0-9]+(?:-[a-z0-9]+)*$/.test(productId)&&productId.length<=80;
   const doc=document;
+  // Only the embedding parent may set the non-sensitive visual theme.
+  window.addEventListener('message',event=>{if(event.source!==window.parent||event.data?.type!=='zrain-community:theme')return;if(event.data.theme==='day'||event.data.theme==='night')doc.body.dataset.theme=event.data.theme;});
   // A comment management token is a 24-hour, per-comment capability, not an account.
   // Keep up to five unexpired tokens per product on this Community origin only.
   // Never copy them into the parent website or include them in a URL.
@@ -63,8 +65,9 @@
   loadOwned();
   function node(tag,className,text){const x=doc.createElement(tag);if(className)x.className=className;if(text!==undefined)x.textContent=text;return x;}
   function status(element,message,kind=''){element.textContent=message;element.className='status '+kind;resize();}
-  function resize(){if(!instance||window.parent===window)return;const height=Math.max(300,Math.ceil(doc.documentElement.scrollHeight+8));window.parent.postMessage({type:'zrain-community:height',instance,height},'*');}
-  if(typeof ResizeObserver!=='undefined')new ResizeObserver(resize).observe(doc.body);
+  const resizeContent=doc.querySelector('.community-wrap')||doc.body;
+  function resize(){if(!instance||window.parent===window)return;const height=Math.max(300,Math.ceil(resizeContent.getBoundingClientRect().bottom+window.scrollY+8));window.parent.postMessage({type:'zrain-community:height',instance,height},'*');}
+  if(typeof ResizeObserver!=='undefined')new ResizeObserver(resize).observe(resizeContent);
   async function request(path,opts={}){
     const res=await fetch(api+path,{...opts,headers:{'Accept':'application/json',...(opts.body?{'Content-Type':'application/json'}:{}),...(opts.headers||{})}});
     const data=await res.json();if(!res.ok)throw Error(data.error||'Community is unavailable');return data;

@@ -29,6 +29,11 @@
   frame.style.cssText='display:block;width:100%;height:520px;border:0;background:transparent;';
   frame.setAttribute('allow','');
   parent.append(frame);
+  // Mirror only the visual theme; no visitor or comment data is shared.
+  function syncTheme(){const shell=document.querySelector('.zr-compact[data-theme]');const theme=shell?.dataset.theme==='night'?'night':'day';frame.contentWindow?.postMessage({type:'zrain-community:theme',theme},base);}
+  frame.addEventListener('load',syncTheme);
+  const themeObserver=typeof MutationObserver!=='undefined'?new MutationObserver(syncTheme):null;
+  themeObserver?.observe(document.documentElement,{subtree:true,attributes:true,attributeFilter:['data-theme'],childList:true});
   function receive(event){
     if(event.origin!==base||event.source!==frame.contentWindow)return;
     if(event.data?.type!=='zrain-community:height'||event.data.instance!==key)return;
@@ -36,5 +41,5 @@
     if(Number.isFinite(height)&&height>=260&&height<=20000)frame.style.height=Math.ceil(height)+'px';
   }
   window.addEventListener('message',receive);
-  window.addEventListener('pagehide',()=>window.removeEventListener('message',receive),{once:true});
+  window.addEventListener('pagehide',()=>{window.removeEventListener('message',receive);themeObserver?.disconnect()},{once:true});
 })();

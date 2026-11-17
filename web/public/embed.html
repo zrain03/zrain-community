@@ -9,8 +9,8 @@
 -->
 <html lang="en"><head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow">
-<meta name="referrer" content="no-referrer"><title>Zrain Community</title><link rel="icon" type="image/webp" href="/zrain-logo.webp"><link rel="stylesheet" href="./community.css"><link rel="stylesheet" href="https://zrain.web.app/ui/v2/integration.css?v=feedback-20261116">
-<script defer src="./config.js"></script><script defer src="./community-client.js"></script>
+<meta name="referrer" content="no-referrer"><title>Zrain Community</title><link rel="icon" type="image/png" href="https://zrain.web.app/zrain-mascot.png?v=20261117"><link rel="stylesheet" href="./community.css"><link rel="stylesheet" href="https://zrain.web.app/ui/v2/integration.css?v=feedback-20261116">
+<script defer src="./config.js"></script><script defer src="./community-client.js?v=20261117"></script>
 <style>
 .zrain-compact-embed{background:#f1e6da;color:#452733}
 .zrain-compact-embed .community-wrap{padding:12px;margin:auto}
@@ -27,6 +27,22 @@
 .zrain-compact-embed .button.primary{background:#582a39;border-color:#582a39;padding:8px 13px}
 .zrain-compact-embed .comments-list .comment{padding:10px;margin-bottom:6px}
 .zrain-compact-embed .footer-note{margin:8px 0;font-size:11px}
+
+/* Accessible Community embed surfaces, coordinated with the host theme. */
+html:has(body.zrain-compact-embed){background:#f1e6da}
+.zrain-compact-embed{font-size:14px}
+.zrain-compact-embed .muted,.zrain-compact-embed .mini,.zrain-compact-embed .status,.zrain-compact-embed .empty{color:#66504b}
+.zrain-compact-embed .field label{font-size:13px;color:#39242b}
+.zrain-compact-embed .field :is(input,select,textarea){color:#39242b;border-color:#b79a8e}
+.zrain-compact-embed .status.error{color:#9a2930}.zrain-compact-embed .status.ok{color:#21614a}
+.zrain-compact-embed[data-theme="night"]{background:#42212c;color:#fff3e1}
+html:has(body.zrain-compact-embed[data-theme="night"]){background:#42212c}
+.zrain-compact-embed[data-theme="night"] .community-heading .muted,.zrain-compact-embed[data-theme="night"] .comments-heading .muted{color:#ead4c3}
+.zrain-compact-embed[data-theme="night"] .card,.zrain-compact-embed[data-theme="night"] .comment,.zrain-compact-embed[data-theme="night"] .empty{color:#39242b}
+.zrain-compact-embed[data-theme="night"] .footer-note{color:#ead4c3}
+.zrain-compact-embed[data-theme="night"] .community-heading h2,.zrain-compact-embed[data-theme="night"] .community-heading h3{color:#fff3e1}
+.zrain-compact-embed[data-theme="night"] .comment-sort label,.zrain-compact-embed[data-theme="night"] .loading{color:#ead4c3}
+.zrain-compact-embed[data-theme="night"] #listStatus.error{color:#ffcab9}
 </style></head><body class="zrain-compact-embed"><main id="feedback" class="community-wrap" data-zrain-content><div class="community-heading"><div><div class="eyebrow">ZRAIN COMMUNITY · FEEDBACK</div><h2>Share a thought<span class="zrc-dot">.</span></h2><p class="muted" id="productLine">Ideas, questions and feedback for this product.</p></div><span class="tag zrc-independent">Independent discussion</span></div>
 <section class="card compose" aria-label="Leave a comment"><div class="zrc-compose-heading"><div><h3>Join the conversation</h3><p class="muted">No account needed. Appropriate comments appear right away.</p></div><span class="zrc-instant"><span aria-hidden="true">●</span> Instant posting</span></div>
 <div class="reply-note hidden" id="replyNote"><span id="replyLabel"></span><button type="button" class="button linkish" id="cancelReply">Cancel reply</button></div>

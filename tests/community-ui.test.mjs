@@ -108,3 +108,12 @@ test('contact labels remain English for legacy BM requests',()=>{
   const fields={mail:{},community:{},small:{},attrs:{}};const mail={querySelector(){return fields.mail}};const community={querySelector(selector){return selector==='strong'?fields.community:fields.small},setAttribute(k,v){fields.attrs[k]=v}};const change=new Function('mail','community',declaration+';return setLanguage')(mail,community);change('bm');assert.equal(fields.mail.textContent,'Email');assert.equal(fields.community.textContent,'Community');assert.equal(fields.small.textContent,'Leave a note');assert.equal(fields.attrs['aria-label'],'Open product Community');
  }
 });
+
+// Embedded feedback must shrink when its contents shrink, even if the iframe was taller.
+test('feedback resize follows content height and can shrink',()=>{
+ const source=read('web/public/community-client.js');
+ const declaration='function resize(){'+source.split('function resize(){')[1].split(String.fromCharCode(10))[0].trim();
+ let bottom=900;const sent=[];const parent={postMessage(message){sent.push(message)}};const win={parent,scrollY:0};const content={getBoundingClientRect(){return {bottom}}};
+ const resize=new Function('instance','window','resizeContent',declaration+';return resize')('example',win,content);
+ resize();bottom=380;resize();assert.equal(sent[0].height,908);assert.equal(sent[1].height,388);assert.equal(sent[1].instance,'example');
+});
