@@ -88,3 +88,13 @@ test('native views retain English content without Malay dictionaries',()=>{
   }
  }
 });
+
+// The embedded game keeps the same English output for old two-argument callers.
+test('embedded game translation compatibility returns English',()=>{
+ for(const name of ['index.html','guidelines.html','privacy.html']) {
+  const declaration=read('web/public/'+name).match(/const tr=\(en\)=>en;/)?.[0];
+  assert.ok(declaration,name);
+  const translate=new Function(declaration+';return tr')();
+  assert.equal(translate('Buttons: ','Butang: '),'Buttons: ');
+ }
+});
