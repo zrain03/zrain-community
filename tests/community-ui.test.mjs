@@ -98,3 +98,13 @@ test('embedded game translation compatibility returns English',()=>{
   assert.equal(translate('Buttons: ','Butang: '),'Buttons: ');
  }
 });
+
+// Legacy language requests cannot change visible contact labels away from English.
+test('contact labels remain English for legacy BM requests',()=>{
+ for(const path of ["web/public/index.html","web/public/guidelines.html","web/public/privacy.html"]) {
+  const source=read(path);
+  const declaration=source.match(/const setLanguage=lang=>\{mail\.querySelector\('strong'\)[^\r\n]+?\};/)?.[0];
+  assert.ok(declaration,path);
+  const fields={mail:{},community:{},small:{},attrs:{}};const mail={querySelector(){return fields.mail}};const community={querySelector(selector){return selector==='strong'?fields.community:fields.small},setAttribute(k,v){fields.attrs[k]=v}};const change=new Function('mail','community',declaration+';return setLanguage')(mail,community);change('bm');assert.equal(fields.mail.textContent,'Email');assert.equal(fields.community.textContent,'Community');assert.equal(fields.small.textContent,'Leave a note');assert.equal(fields.attrs['aria-label'],'Open product Community');
+ }
+});

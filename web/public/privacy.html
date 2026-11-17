@@ -2815,7 +2815,7 @@ function mountZrainContactLinks({container,openCommunity,githubUrl='https://gith
   const community=doc.createElement('button');community.type='button';community.innerHTML=iconCommunity+'<span><strong>Community</strong><small>Leave a note</small></span>';community.setAttribute('aria-label','Open product Community');
   community.addEventListener('click',openCommunity);
   nav.append(github,mail,community);container.append(nav);
-  const setLanguage=lang=>{mail.querySelector('strong').textContent=lang==='bm'?'Emel':'Email';community.querySelector('strong').textContent=lang==='bm'?'Komuniti':'Community';community.querySelector('small').textContent=lang==='bm'?'Tinggalkan pesanan':'Leave a note';community.setAttribute('aria-label',lang==='bm'?'Buka Komuniti produk':'Open product Community');};
+  const setLanguage=lang=>{mail.querySelector('strong').textContent='Email';community.querySelector('strong').textContent='Community';community.querySelector('small').textContent='Leave a note';community.setAttribute('aria-label','Open product Community');};
   return {element:nav,setLanguage};
 }
 
